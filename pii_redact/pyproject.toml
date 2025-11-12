@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pii_redact"
+version = "0.1.0"
+description = "Batch-redact PII (emails, phones, SSNs, and custom names) from text PDFs with precise overlays and CSV logging."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+license = { text = "MIT" }
+keywords = ["pii", "redaction", "pdf", "privacy", "compliance"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "pymupdf>=1.23.0",
+]
+
+[project.urls]
+Homepage = "https://example.com/pii_redact"
+
+[project.scripts]
+pii_redact = "pii_redact.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
